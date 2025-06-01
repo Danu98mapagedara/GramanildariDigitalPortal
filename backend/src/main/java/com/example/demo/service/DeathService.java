@@ -1,8 +1,11 @@
 package com.example.demo.service;
 import com.example.demo.modal.DeathCertificateRequest;
+import com.example.demo.modal.MarriageCertificateRequest;
 import com.example.demo.repo.DeathRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class DeathService {
@@ -14,6 +17,8 @@ public DeathCertificateRequest addDeathForm (DeathCertificateRequest deathCertif
     return deathRepository.save(deathCertificateRequest);
 }
 
-
+    public List<DeathCertificateRequest> getAllDeath (){
+        return deathRepository.findAll();
+    }
 
 }

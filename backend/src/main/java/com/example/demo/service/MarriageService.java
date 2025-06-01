@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MarriageService {
    @Autowired
@@ -14,4 +16,9 @@ public class MarriageService {
       return  marriageRepositary.save(marriageCertificateRequest);
    }
 
+
+
+   public List<MarriageCertificateRequest> getAllMarriage (){
+       return marriageRepositary.findAll();
+   }
 }
