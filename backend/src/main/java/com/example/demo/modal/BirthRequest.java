@@ -31,7 +31,6 @@ public class BirthRequest {
     private String requesterEmail;
 
 
-
     public Long getId() {
         return id;
     }
