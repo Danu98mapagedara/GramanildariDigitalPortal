@@ -18,15 +18,13 @@ import java.io.IOException;
 public class PdfFileController {
 
     private PdfFileService pdfFileService;
-    @Autowired
     @PostMapping("/upload")
 
-    public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
-        try {
-            pdfFileService.saveFile(file);
-            return ResponseEntity.ok("File uploaded successfully!");
-        } catch (IOException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("File upload failed!");
+    public ResponseEntity<String> uploadPdf(@RequestParam("file") MultipartFile file) {
+        if (file.isEmpty()) {
+            return ResponseEntity.badRequest().body("No file uploaded");
         }
+        // Save logic here
+        return ResponseEntity.ok("Uploaded: " + file.getOriginalFilename());
     }
 }

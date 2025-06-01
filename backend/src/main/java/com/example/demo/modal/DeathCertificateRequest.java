@@ -1,10 +1,7 @@
 package com.example.demo.modal;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -26,6 +23,11 @@ public class DeathCertificateRequest {
     private String requesterRelationship;
     private String requesterContact;
     private String requesterEmail;
+    @Lob
+    private byte[] identityCardImage;
+    private String imageFileName;
+    private String imageContentType;
+
 
     // Constructors
     public DeathCertificateRequest() {}
@@ -120,4 +122,30 @@ public class DeathCertificateRequest {
     public void setRequesterEmail(String requesterEmail) {
         this.requesterEmail = requesterEmail;
     }
+
+
+    public byte[] getIdentityCardImage() {
+        return identityCardImage;
+    }
+
+    public void setIdentityCardImage(byte[] identityCardImage) {
+        this.identityCardImage = identityCardImage;
+    }
+
+    public String getImageFileName() {
+        return imageFileName;
+    }
+
+    public void setImageFileName(String imageFileName) {
+        this.imageFileName = imageFileName;
+    }
+
+    public String getImageContentType() {
+        return imageContentType;
+    }
+
+    public void setImageContentType(String imageContentType) {
+        this.imageContentType = imageContentType;
+    }
+
 }

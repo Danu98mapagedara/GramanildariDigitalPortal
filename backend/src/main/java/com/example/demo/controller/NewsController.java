@@ -14,8 +14,8 @@ public class NewsController {
     @Autowired
     private NewsService newsService;
     @PostMapping
+    public NewsModal uploadNews ( @RequestBody NewsModal newsModal){
 
-    public NewsModal addNews ( @RequestBody NewsModal newsModal){
         return  newsService.addNews(newsModal);
     }
 
