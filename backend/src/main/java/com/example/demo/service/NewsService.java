@@ -22,4 +22,16 @@ public class NewsService {
     public List<NewsModal> getAllNews(){
         return  newsRepo.findAll();
     }
+
+    public NewsModal updateNews(Long id, NewsModal updatedNews) {
+        NewsModal existingNews = newsRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("News not found with id " + id));
+
+        // Update the fields
+        existingNews.setTitle(updatedNews.getTitle());
+        existingNews.setDescription(updatedNews.getDescription());
+
+
+        return newsRepo.save(existingNews);
+    }
 }
