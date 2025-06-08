@@ -4,19 +4,21 @@ import News from './pages/News'
 import React from 'react'
 
 import Home from './pages/Home'
+import Navbar from './components/navbar'
+import Footer from './components/Footer'
 function App() {
  
 
   return (
    <>
     <Router>
-    <Navbar/>
+  <Navbar/>
          <Routes>
           <Route path="/" element={<Home />} />
         
      
         </Routes>
-          <Footer/> 
+         <Footer/> 
       </Router>
   
     </>
