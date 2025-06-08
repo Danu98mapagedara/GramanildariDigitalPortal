@@ -7,9 +7,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
-    { name: "Dashboard", path: "#" },
-    { name: "Requests", path: "#" },
-    { name: "Citizens", path: "#" },
+    { name: "Service", path: "service" },
+    { name: "News", path: "news" },
+    { name: "Downloads", path: "download" },
     { name: "Profile", path: "#" },
   ];
 
