@@ -6,15 +6,22 @@ import React from 'react'
 import Home from './pages/Home'
 import Navbar from './components/navbar'
 import Footer from './components/Footer'
+import BirthForm from './components/forms/BirthForm'
+import DeathForm from './components/forms/DeathForm'
+import MarriageForm from './components/forms/MarriageForm'
+
 function App() {
  
 
   return (
    <>
     <Router>
-  <Navbar/>
+  <Navbar/> <br /> <br /> <br />
          <Routes>
           <Route path="/" element={<Home />} />
+            <Route path="/birthformrequest" element={<BirthForm/>} />
+              <Route path="/deathformrequest" element={<DeathForm />} />
+                <Route path="/marriageformrequest" element={<MarriageForm />} />
         
      
         </Routes>
