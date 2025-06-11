@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/marriageform")
+@CrossOrigin(origins = "http://localhost:5173")
 public class MarriageController {
      @Autowired
     private MarriageService marriageService;
