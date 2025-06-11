@@ -1,7 +1,9 @@
+import React from 'react'
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import News from './pages/News'
-import React from 'react'
+
 
 import Home from './pages/Home'
 import Navbar from './components/navbar'
@@ -10,6 +12,9 @@ import BirthForm from './components/forms/BirthForm'
 import DeathForm from './components/forms/DeathForm'
 import MarriageForm from './components/forms/MarriageForm'
 import ServiceSlider from './pages/ServiceSlider'
+import AdminRoutes from './routes/AdminRoutes'
+import Sidebar from './admin/admincomponents/sidebar'
+import AdminLayout from './admin/adminpages/AdminLayout'
 
 function App() {
  
@@ -26,9 +31,13 @@ function App() {
               <Route path="/deathcertificaterequest" element={<DeathForm />} />
                 <Route path="/marriageregistration" element={<MarriageForm />} />
            
+
+            {/* Admin routes */}
+         <Route path="/admin/*" element={<AdminLayout/>} />
      
         </Routes>
          <Footer/> 
+        
       </Router>
   
     </>
