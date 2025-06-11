@@ -19,7 +19,7 @@ const DeathForm = () => {
       for (const key in formData) {
         formPayload.append(key, formData[key]);
       }
-      return axios.post("http://localhost:8080/api/death", formPayload, {
+      return axios.post("http://localhost:8081/api/deathform", formPayload, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

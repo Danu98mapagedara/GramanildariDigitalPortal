@@ -22,9 +22,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/service" element={<ServiceSlider />} />
           <Route path="/news" element={<News />} />
-            <Route path="/birthformrequest" element={<BirthForm/>} />
-              <Route path="/deathformrequest" element={<DeathForm />} />
-                <Route path="/marriageformrequest" element={<MarriageForm />} />
+            <Route path="/birthcertificaterequest" element={<BirthForm/>} />
+              <Route path="/deathcertificaterequest" element={<DeathForm />} />
+                <Route path="/marriageregistration" element={<MarriageForm />} />
            
      
         </Routes>

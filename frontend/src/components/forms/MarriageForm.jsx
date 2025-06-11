@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import images from '../../constants/images';
 
 const MarriageForm = () => {
 
@@ -15,7 +16,7 @@ const MarriageForm = () => {
   
   const mutation=useMutation({
     mutationFn:async(formData)=>{
-      return await axios.post("http://localhost:8080/api/marriage", formData);
+      return await axios.post("http://localhost:8081/api/marriageform", formData);
     }
     ,
     onSuccess: () => {
@@ -32,21 +33,32 @@ const MarriageForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+   <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white shadow-md rounded-xl max-w-3xl w-full p-8 space-y-6"
+        className="relative bg-white shadow-md rounded-xl w-1/2 mx-auto p-8 space-y-6 overflow-hidden"
+       
       >
+
+          <div className="absolute inset-0 z-0"
+    style={{
+      backgroundImage: `url(${images.dir})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      filter: 'blur(5px)',
+      opacity: 0.4,
+    }}
+  ></div>
         <h2 className="text-2xl font-bold text-center text-green-700 mb-4">
           Marriage Certificate Request
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="max-w-full mx-auto space-y-8 p-4 px-5">
           <div>
             <label className="block font-medium">Bride's Full Name</label>
-            <input
+            <input className="border-2   p-1 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-black-500" 
               {...register("brideFullName", { required: true })}
-              className="input"
+             
               placeholder="Bride's full name"
             />
             {errors.brideFullName && (
@@ -58,7 +70,7 @@ const MarriageForm = () => {
             <label className="block font-medium">Groom's Full Name</label>
             <input
               {...register("groomFullName", { required: true })}
-              className="input"
+               className="border-2   p-1 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-black-500" 
               placeholder="Groom's full name"
             />
             {errors.groomFullName && (
@@ -71,7 +83,7 @@ const MarriageForm = () => {
             <input
               type="date"
               {...register("marriageDate", { required: true })}
-              className="input"
+              className="border-2   p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-black-500" 
             />
             {errors.marriageDate && (
               <span className="text-red-500 text-sm">Required</span>
@@ -82,7 +94,7 @@ const MarriageForm = () => {
             <label className="block font-medium">Place of Marriage</label>
             <input
               {...register("placeOfMarriage", { required: true })}
-              className="input"
+             className="border-2   p-1 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-black-500" 
               placeholder="Location"
             />
             {errors.placeOfMarriage && (
@@ -94,7 +106,7 @@ const MarriageForm = () => {
             <label className="block font-medium">Bride's Address</label>
             <input
               {...register("addressBride", { required: true })}
-              className="input"
+               className="border-2   p-1 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-black-500" 
               placeholder="Address"
             />
             {errors.addressBride && (
@@ -106,7 +118,7 @@ const MarriageForm = () => {
             <label className="block font-medium">Groom's Address</label>
             <input
               {...register("addressGroom", { required: true })}
-              className="input"
+             className="border-2   p-1 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-black-500" 
               placeholder="Address"
             />
             {errors.addressGroom && (
@@ -118,7 +130,7 @@ const MarriageForm = () => {
             <label className="block font-medium">Contact Number</label>
             <input
               {...register("contactNumber", { required: true })}
-              className="input"
+            className="border-2   p-1 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-black-500" 
               placeholder="Phone"
             />
             {errors.contactNumber && (
@@ -131,7 +143,7 @@ const MarriageForm = () => {
             <input
               type="email"
               {...register("email", { required: true })}
-              className="input"
+              className="border-2   p-1 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-black-500" 
               placeholder="Email"
             />
             {errors.email && (
@@ -142,7 +154,7 @@ const MarriageForm = () => {
 
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition"
+          className="w-1/4 py-2 px-5 ml-9 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition"
         >
           Submit Request
         </button>

@@ -35,7 +35,7 @@ const ServiceSlider = () => {
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
-                <button className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition cursor-pointer">
+                <button className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition cursor-pointer" onClick={()=> window.location.href = `/${service.title.toLowerCase().replace(/\s+/g, '')}`}>
                   Request
                 </button>
               </div>

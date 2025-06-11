@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import  images  from '../../constants/images'
 
 const BirthForm = () => {
 
@@ -15,7 +16,7 @@ const{
 
   const mutation = useMutation({
     mutationFn: (formData) =>
-      axios.post("http://localhost:8080/api/birth", formData), 
+      axios.post("http://localhost:8081/api/birthform", formData), 
     onSuccess: () => {
       alert("Birth request submitted successfully!");
       reset();
@@ -33,13 +34,26 @@ const{
 
   return (
    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-    <div className="max-w-3xl w-full p-8 bg-white rounded-xl shadow-md">
+    <div className="relative  max-w-3xl w-full p-8  bg-white rounded-xl shadow-md">
 
+<div  className='absolute inset-0 z-0'
+      style={{
+        backgroundImage: `url(${images.bir})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        filter: 'blur(5px)',
+        opacity: 0.4,
+      }}
+
+>
+
+
+</div>
 
  <h2 className="text-2xl font-bold text-green-700 my-11 text-center">
         Birth Certificate Request
       </h2>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 px-7">
         {/* Child's Info */}
         <div>
           <label className="block mb-1 font-semibold">Child's Full Name</label>
@@ -152,10 +166,10 @@ const{
             className="w-full px-4 py-2 border rounded"
           />
         </div>
-
+<br />
         <button
           type="submit"
-          className="w-1/2 bg-green-700 text-white py-2 rounded hover:bg-green-800" align="center"
+          className="w-1/4 bg-green-700 text-white py-2 rounded hover:bg-green-800" align="center mt-4 cursor-pointer"
           disabled={mutation.isLoading}
         >
           {mutation.isLoading ? "Submitting..." : "Submit Request"}
