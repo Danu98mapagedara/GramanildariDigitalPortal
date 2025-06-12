@@ -18,7 +18,15 @@ const uploadFile = async (file) => {
     return res.json();
   };
 
-
+  const handleUpload = () => {
+    if (!file) {
+      setMessage('Please select a file first.');
+      return;
+    }
+    setMessage('');
+    mutation.mutate(file);
+  };
+  
    const mutation = useMutation({
     mutationFn: uploadFile,
     onSuccess: () => {
