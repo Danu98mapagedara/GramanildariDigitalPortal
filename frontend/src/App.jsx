@@ -13,8 +13,8 @@ import DeathForm from './components/forms/DeathForm'
 import MarriageForm from './components/forms/MarriageForm'
 import ServiceSlider from './pages/ServiceSlider'
 import AdminRoutes from './routes/AdminRoutes'
-import Sidebar from './admin/admincomponents/sidebar'
 import AdminLayout from './admin/adminpages/AdminLayout'
+
 
 function App() {
  
@@ -33,7 +33,8 @@ function App() {
            
 
             {/* Admin routes */}
-         <Route path="/admin/*" element={<AdminLayout/>} />
+       
+ <Route path="/admin/*" element={<AdminLayout />} />
      
         </Routes>
          <Footer/> 

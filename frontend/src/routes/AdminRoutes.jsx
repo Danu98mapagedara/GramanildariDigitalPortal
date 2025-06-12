@@ -1,18 +1,14 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import AdminLayout from '../admin/adminpages/AdminLayout'
-
+import  Dashbord from '../admin/adminpages/dashboard'
 
 const AdminRoutes = () => {
   return (
-      <Routes>
-      <Route path="/admin" element={<AdminLayout/>}>
-     
-        {/* // <Route path="birth-requests" element={<BirthRequests />} />
-        // <Route path="marriage-requests" element={<MarriageRequests />} />
-        // <Route path="death-requests" element={<DeathRequests />} />
-        // <Route path="uploads" element={<Uploads />} />
-        // <Route path="settings" element={<Settings />} />  */}
+    <Routes>
+        <Route path="/admin" element={<AdminLayout />}>
+       <Route path='dashboard' element={<Dashbord />} />
+      
       </Route>
     </Routes>
   )
