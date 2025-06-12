@@ -12,8 +12,8 @@ import BirthForm from './components/forms/BirthForm'
 import DeathForm from './components/forms/DeathForm'
 import MarriageForm from './components/forms/MarriageForm'
 import ServiceSlider from './pages/ServiceSlider'
-import AdminRoutes from './routes/AdminRoutes'
-import AdminLayout from './admin/adminpages/AdminLayout'
+import Dashboard from './admin/adminpages/dashboard'
+import Marriage from './admin/adminpages/marriagerequest'
 
 
 function App() {
@@ -33,9 +33,14 @@ function App() {
            
 
             {/* Admin routes */}
-       
- <Route path="/admin/*" element={<AdminLayout />} />
-     
+            
+         
+    <Route path="/admin" element={<Dashboard/>} />
+     <Route path="/admin/marriage-requests" element={<Marriage/>} />
+
+
+
+
         </Routes>
          <Footer/> 
         
