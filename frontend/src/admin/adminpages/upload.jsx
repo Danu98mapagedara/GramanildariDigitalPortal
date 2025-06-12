@@ -2,6 +2,9 @@ import React from 'react'
 
 const upload = () => {
 
+    const [file, setFile] = useState(null);
+  const [message, setMessage] = useState('');
+
 const uploadFile = async (file) => {
     const formData = new FormData();
     formData.append('file', file);
@@ -26,7 +29,7 @@ const uploadFile = async (file) => {
     setMessage('');
     mutation.mutate(file);
   };
-  
+
    const mutation = useMutation({
     mutationFn: uploadFile,
     onSuccess: () => {
