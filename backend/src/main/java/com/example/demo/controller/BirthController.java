@@ -6,6 +6,8 @@ import com.example.demo.service.BirthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/birthform")
 @CrossOrigin(origins = "http://localhost:5173")
@@ -17,4 +19,7 @@ public class BirthController {
     public BirthRequest addBirthForm(@RequestBody BirthRequest birthRequest){
       return   birthService.addBirthForm(birthRequest);
     }
+
+    @GetMapping
+    public List<BirthRequest>GetAllbirth(){return  birthService.GetAllbirth();}
 }

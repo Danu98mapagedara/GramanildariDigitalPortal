@@ -15,9 +15,6 @@ public class MarriageService {
    public MarriageCertificateRequest addMarriageForm(MarriageCertificateRequest marriageCertificateRequest){
       return  marriageRepositary.save(marriageCertificateRequest);
    }
-
-
-
    public List<MarriageCertificateRequest> getAllMarriage (){
        return marriageRepositary.findAll();
    }

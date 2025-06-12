@@ -6,6 +6,8 @@ import com.example.demo.repo.BirthRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BirthService {
     @Autowired
@@ -16,6 +18,7 @@ public class BirthService {
         return  birthRepository.save(birthRequest);
     }
 
+    public List <BirthRequest> GetAllbirth (){ return birthRepository.findAll();}
 
 
 }
