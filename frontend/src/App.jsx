@@ -12,6 +12,7 @@ import ServiceSlider from './pages/ServiceSlider'
 import Dashboard from './admin/adminpages/dashboard'
 import Marriage from './admin/adminpages/marriagerequest'
 import Birth from './admin/adminpages/birthrequest'
+import Upload from './admin/adminpages/upload'
 
 function App() {
  
@@ -33,6 +34,7 @@ function App() {
     <Route path="/admin" element={<Dashboard/>} />
      <Route path="/admin/marriage-requests" element={<Marriage/>} />
      <Route path="/admin/birth-requests" element={<Birth/>} />
+     <Route path="/admin/upload" element={<Upload/>} />
 
         </Routes>
          <Footer/> 

@@ -11,7 +11,7 @@ const Sidebar = () => {
         <li><NavLink to="/admin/birth-requests">Birth Requests</NavLink></li>
         <li><NavLink to="/admin/marriage-requests">Marriage Requests</NavLink></li>
         <li><NavLink to="/admin/death-requests">Death Requests</NavLink></li>
-        <li><NavLink to="/admin/uploads">Uploads</NavLink></li>
+        <li><NavLink to="/admin/upload">Uploads</NavLink></li>
         <li><NavLink to="/admin/settings">Settings</NavLink></li>
         <li><NavLink to="/login">Logout</NavLink></li>
       </ul>
