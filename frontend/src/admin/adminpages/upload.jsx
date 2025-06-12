@@ -2,20 +2,29 @@ import React from 'react'
 
 const upload = () => {
   return (
-    <div>
+   <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">📤 Upload PDF File</h2>
 
+        <input
+          type="file"
+          accept="application/pdf"
+          onChange={(e) => setFile(e.target.files[0])}
+          className="mb-4 w-full border border-gray-300 rounded px-3 py-2 text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+        />
 
+        <button
+          onClick={handleUpload}
+          disabled={mutation.isLoading}
+          className={`w-full py-2 px-4 rounded bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition ${
+            mutation.isLoading && 'opacity-50 cursor-not-allowed'
+          }`}
+        >
+          {mutation.isLoading ? 'Uploading...' : 'Upload'}
+        </button>
 
-      <h1 className='text-2xl font-bold text-center mt-10'>Upload Documents</h1>
-      <div className='flex justify-center mt-10'>
-        <form className='bg-white p-6 rounded-lg shadow-md w-1/2'>
-          <div className='mb-4'>
-            <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='file'>Select File:</label>
-            <input type='file' id='file' className='border border-gray-300 p-2 w-full' />
-          </div>
-          <button type='submit' className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'>Upload</button>
-        </form>
-    </div>
+        {message && <p className="mt-4 text-center text-sm text-gray-700">{message}</p>}
+      </div>
     </div>
   )
 }
