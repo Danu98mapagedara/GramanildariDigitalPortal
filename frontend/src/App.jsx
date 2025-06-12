@@ -1,10 +1,7 @@
 import React from 'react'
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import News from './pages/News'
-
-
 import Home from './pages/Home'
 import Navbar from './components/navbar'
 import Footer from './components/Footer'
@@ -14,7 +11,7 @@ import MarriageForm from './components/forms/MarriageForm'
 import ServiceSlider from './pages/ServiceSlider'
 import Dashboard from './admin/adminpages/dashboard'
 import Marriage from './admin/adminpages/marriagerequest'
-
+import Birth from './admin/adminpages/birthrequest'
 
 function App() {
  
@@ -32,14 +29,10 @@ function App() {
                 <Route path="/marriageregistration" element={<MarriageForm />} />
            
 
-            {/* Admin routes */}
-            
-         
+            {/* Admin routes */}   
     <Route path="/admin" element={<Dashboard/>} />
      <Route path="/admin/marriage-requests" element={<Marriage/>} />
-
-
-
+     <Route path="/admin/birth-requests" element={<Birth/>} />
 
         </Routes>
          <Footer/> 
