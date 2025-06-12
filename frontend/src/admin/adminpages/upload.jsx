@@ -1,6 +1,25 @@
 import React from 'react'
 
 const upload = () => {
+
+const uploadFile = async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const res = await fetch('http://localhost:8081/api/pdf/upload', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (!res.ok) {
+      throw new Error('Upload failed');
+    }
+
+    return res.json();
+  };
+
+
+
   return (
    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
