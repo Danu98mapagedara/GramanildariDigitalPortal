@@ -19,6 +19,16 @@ const uploadFile = async (file) => {
   };
 
 
+   const mutation = useMutation({
+    mutationFn: uploadFile,
+    onSuccess: () => {
+      setMessage('✅ File uploaded successfully!');
+    },
+    onError: () => {
+      setMessage('❌ Error uploading file.');
+    },
+  });
+
 
   return (
    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
