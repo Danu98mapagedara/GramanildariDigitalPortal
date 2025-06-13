@@ -18,4 +18,13 @@ public class MarriageService {
    public List<MarriageCertificateRequest> getAllMarriage (){
        return marriageRepositary.findAll();
    }
+
+
+
+   public  MarriageCertificateRequest  updateStatus(Long id,Boolean status){
+      return marriageRepositary.findById(id).map(req -> {
+          req.setStatus(status);
+          return  marriageRepositary.save(req);
+      }) .orElseThrow(() -> new RuntimeException("Request not found with id: " + id));
+   }
 }
