@@ -26,10 +26,12 @@ public class MarriageCertificateRequest {
     private String contactNumber;
     private String email;
 
-    private String status = "Pending";
+    private Boolean status; // true = approved, false = rejected
+
 
     // Constructors
-    public MarriageCertificateRequest() {}
+    public MarriageCertificateRequest() {
+    }
 
     // Getters and Setters
     public Long getId() {
@@ -104,12 +106,12 @@ public class MarriageCertificateRequest {
         this.email = email;
     }
 
-
-    public String getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 }
+
