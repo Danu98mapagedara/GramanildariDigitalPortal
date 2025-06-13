@@ -26,7 +26,7 @@ public class MarriageCertificateRequest {
     private String contactNumber;
     private String email;
 
-
+    private String status = "Pending";
 
     // Constructors
     public MarriageCertificateRequest() {}
@@ -102,5 +102,14 @@ public class MarriageCertificateRequest {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

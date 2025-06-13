@@ -25,3 +25,4 @@ public class MarriageController {
          return  marriageService.getAllMarriage();
      }
 }
+
