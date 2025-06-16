@@ -6,6 +6,7 @@ import mform from '../assets/images/mform.jpg';
 import taximg from '../assets/images/tax.jpg';
 import bir from '../assets/images/bir.jpg';
 import dir from '../assets/images/marry.jpg';
+import profile from '../assets/images/profile.jpg';
 
 const images = {
 
@@ -16,6 +17,7 @@ const images = {
     taximg,
     bir,
     dir,
+    profile
     
 }
 
