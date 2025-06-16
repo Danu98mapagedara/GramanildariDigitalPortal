@@ -13,6 +13,7 @@ import Dashboard from './admin/adminpages/dashboard'
 import Marriage from './admin/adminpages/marriagerequest'
 import Birth from './admin/adminpages/birthrequest'
 import Upload from './admin/adminpages/upload'
+import Profile from './admin/adminpages/profile'
 
 function App() {
  
@@ -35,6 +36,7 @@ function App() {
      <Route path="/admin/marriage-requests" element={<Marriage/>} />
      <Route path="/admin/birth-requests" element={<Birth/>} />
      <Route path="/admin/upload" element={<Upload/>} />
+     <Route path="/admin/profile" element={<Profile/>} />
 
         </Routes>
          <Footer/> 

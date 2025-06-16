@@ -1,7 +1,16 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
 import  images  from "../../constants/images"
+
 const profile = () => {
+
+    const{
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    
+    }= useForm();
   return (
     <div className='min-h-screen bg-gray-100  justify-center p-4'>
 <h2 className='text-2xl font-bold mb-6 text-center text-gray-800'>👤 My Profile</h2>
@@ -22,7 +31,7 @@ const profile = () => {
 
 <div className='bg-white flex border-2 rounded-2 p-5'></div>
 <h1>Personal Information</h1>
-<button className='bg-orange-400 p-4 border-2 rounded-2'>Edit</button>
+
 <hr />
 <div className='grid  md:grid-cols-2  lg:grid-cols-3 gap-3'>
 <div>
@@ -79,11 +88,7 @@ const profile = () => {
           />
 
 </div>
-<div>
-<label htmlFor="">User  Role</label>
-<p>Admin</p>
-
-</div>
+<button className='bg-orange-400 p-4 border-2 rounded-2'>Edit</button>
 </div>
     </div>
   )

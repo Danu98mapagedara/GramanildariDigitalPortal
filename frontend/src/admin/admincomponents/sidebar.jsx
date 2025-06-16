@@ -33,8 +33,8 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/admin/settings" className="block py-2 rounded hover:bg-amber-300 transition duration-300">
-            Settings
+          <NavLink to="/admin/profile" className="block py-2 rounded hover:bg-amber-300 transition duration-300">
+          Profile
           </NavLink>
         </li>
       </ul>
