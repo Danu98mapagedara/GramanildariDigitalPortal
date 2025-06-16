@@ -1,18 +1,11 @@
 package com.example.demo.modal;
-
-
 import jakarta.persistence.*;
-
 @Entity
 public class PdfFile {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String fileName;
-
     private String fileType;
 
     @Lob

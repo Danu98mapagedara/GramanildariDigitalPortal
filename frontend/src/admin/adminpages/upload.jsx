@@ -20,7 +20,7 @@ const uploadFile = async (file) => {
       throw new Error('Upload failed');
     }
 
-    return res.json();
+    return res.text();
   };
 
   const handleUpload = () => {
@@ -36,6 +36,7 @@ const uploadFile = async (file) => {
     mutationFn: uploadFile,
     onSuccess: () => {
       setMessage('✅ File uploaded successfully!');
+      alert('File uploaded successfully!');
     },
     onError: () => {
       setMessage('❌ Error uploading file.');
