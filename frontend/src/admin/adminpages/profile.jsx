@@ -1,4 +1,5 @@
 import React from 'react'
+import { useForm } from "react-hook-form";
 import  images  from "../../constants/images"
 const profile = () => {
   return (
@@ -19,10 +20,71 @@ const profile = () => {
 </div>
 
 
-<div className='bg-white border-2 rounded-2 p-5'></div>
+<div className='bg-white flex border-2 rounded-2 p-5'></div>
 <h1>Personal Information</h1>
+<button className='bg-orange-400 p-4 border-2 rounded-2'>Edit</button>
 <hr />
+<div className='grid  md:grid-cols-2  lg:grid-cols-3 gap-3'>
+<div>
+<label htmlFor="">First Name</label>
+ <input
+            type="text"
+            {...register("fname", { required: true })}
+            className="w-full px-4 py-2 border none "
+          />
 
+</div>
+<div>
+<label htmlFor="">Last Name</label>
+ <input
+            type="text"
+            {...register("lname", { required: true })}
+            className="w-full px-4 py-2 border none "
+          />
+
+</div>
+<div>
+<label htmlFor="">Date  Of Birth</label>
+ <input
+            type="date"
+            {...register("name", { required: true })}
+            className="w-full px-4 py-2 border none "
+          />
+
+</div>
+<div>
+<label htmlFor="">Date  Of Birth</label>
+ <input
+            type="date"
+            {...register("name", { required: true })}
+            className="w-full px-4 py-2 border none "
+          />
+
+</div>
+<div>
+<label htmlFor="">Email</label>
+ <input
+            type="email"
+            {...register("email", { required: true })}
+            className="w-full px-4 py-2 border none "
+          />
+
+</div>
+<div>
+<label htmlFor="">Phone  Number</label>
+ <input
+            type="number"
+            {...register("pnumber", { required: true })}
+            className="w-full px-4 py-2 border none "
+          />
+
+</div>
+<div>
+<label htmlFor="">User  Role</label>
+<p>Admin</p>
+
+</div>
+</div>
     </div>
   )
 }
