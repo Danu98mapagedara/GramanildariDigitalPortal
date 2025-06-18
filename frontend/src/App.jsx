@@ -1,4 +1,5 @@
 import React from 'react'
+import Context from './context/context'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import News from './pages/News'
@@ -20,7 +21,8 @@ function App() {
 
   return (
    <>
-    <Router>
+   <Context>
+ <Router>
   <Navbar/> <br /> <br /> <br />
          <Routes>
           <Route path="/" element={<Home />} />
@@ -43,6 +45,8 @@ function App() {
         
       </Router>
   
+   </Context>
+   
     </>
   )
 }

@@ -1,18 +1,13 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
 import  images  from "../../constants/images"
+import { user } from '../../context/context'
 
 const profile = () => {
 
-const userData={
-    fname: "Natashia",
-    lname: "Khalereiio",
-    dob: "1990-01-01",
-    address: "123 Main St, City, Country",
-    email: "dlb@uom.lk",
-    pnumber: "0771234567",
-    
-}
+const{
+useData
+}= user();
 
 
     const{
