@@ -6,3 +6,4 @@ const user={
     email: "dlb@uom.lk",
     pnumber: "0771234567",    
 }
+export  default user;

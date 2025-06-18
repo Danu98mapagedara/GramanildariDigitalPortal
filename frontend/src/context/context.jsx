@@ -21,6 +21,6 @@ const context = ({children}) => {
 
 export default context
 
-export const user = () => {
+export const useUser = () => {
   return useContext(UserContext);
 };

@@ -1,104 +1,132 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
-import  images  from "../../constants/images"
-import { user } from '../../context/context'
+import images from "../../constants/images";
+import { useUser } from '../../context/context';
 
-const profile = () => {
+const Profile = () => {
+  const { userData, setUserData } = useUser();
+  const [isEdit, setIsEdit] = useState(false);
 
-const{
-useData
-}= user();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm();
 
+  // Fill form when data changes
+  useEffect(() => {
+    reset(userData);
+  }, [userData, reset]);
 
-    const{
-        register,
-        handleSubmit,
-        formState: { errors },
-        reset,
-    
-    }= useForm();
+  const onSubmit = (data) => {
+    setUserData(data);
+    setIsEdit(false);
+  };
+
   return (
-    <div className='min-h-screen bg-gray-100  justify-center p-4'>
-<h2 className='text-2xl font-bold mb-6 text-center text-gray-800'>👤 My Profile</h2>
+    <div className='min-h-screen bg-gray-100 justify-center p-4'>
+      <h2 className='text-2xl font-bold mb-6 text-center text-gray-800'>👤 My Profile</h2>
 
-<div className='bg-white flex gap-2'>
- <div className='border-2  rounded-xl  '>
+      <div className='bg-white flex gap-4 p-4 rounded-lg'>
+        <div className='border-2 rounded-xl'>
+          <img src={images.profile} alt="Profile" className="w-32 h-32 object-cover rounded-xl" />
+        </div>
+        <div>
+          <h5 className='text-green-600 font-semibold text-lg'>{userData.fname} {userData.lname}</h5>
+          <p className='text-sm'>{userData.role}</p>
+          <p className='text-sm'>{userData.address}</p>
+        </div>
+      </div>
 
-<img src={images.profile} alt="" />
- </div>
- 
- <div>
-<h5 className='text-green-400'>Natashia  Khalereiio</h5>
-<p>Admin</p>
-<p>Location</p>
- </div>
+      <h1 className='mt-6 text-lg font-bold'>Personal Information</h1>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className='bg-white border-2 p-6 mt-2 rounded-lg'
+      >
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
+          <div>
+            <label>First Name</label>
+            <input
+              type="text"
+              {...register("fname", { required: true })}
+              disabled={!isEdit}
+              className="w-full px-4 py-2 border rounded"
+            />
+          </div>
 
-</div>
+          <div>
+            <label>Last Name</label>
+            <input
+              type="text"
+              {...register("lname", { required: true })}
+              disabled={!isEdit}
+              className="w-full px-4 py-2 border rounded"
+            />
+          </div>
 
-<h1>Personal Information</h1> 
-<div className='bg-white flex border-2  p-6 border-none'>
+          <div>
+            <label>Date of Birth</label>
+            <input
+              type="date"
+              {...register("dob", { required: true })}
+              disabled={!isEdit}
+              className="w-full px-4 py-2 border rounded"
+            />
+          </div>
 
-<hr />
-<div className='grid  md:grid-cols-2  lg:grid-cols-3 gap-3'>
-<div>
-<label htmlFor="">First Name</label>
- <input
-            type="text"
-            {...register("fname", { required: true })}
-            className="w-full px-4 py-2 border none "
-          />
+          <div>
+            <label>Address</label>
+            <input
+              type="text"
+              {...register("address", { required: true })}
+              disabled={!isEdit}
+              className="w-full px-4 py-2 border rounded"
+            />
+          </div>
 
-</div>
-<div>
-<label htmlFor="">Last Name</label>
- <input
-            type="text"
-            {...register("lname", { required: true })}
-            className="w-full px-4 py-2 border none "
-          />
+          <div>
+            <label>Email</label>
+            <input
+              type="email"
+              {...register("email", { required: true })}
+              disabled={!isEdit}
+              className="w-full px-4 py-2 border rounded"
+            />
+          </div>
 
-</div>
-<div>
-<label htmlFor="">Date  Of Birth</label>
- <input
-            type="date"
-            {...register("name", { required: true })}
-            className="w-full px-4 py-2 border none "
-          />
+          <div>
+            <label>Phone Number</label>
+            <input
+              type="text"
+              {...register("pnumber", { required: true })}
+              disabled={!isEdit}
+              className="w-full px-4 py-2 border rounded"
+            />
+          </div>
+        </div>
 
-</div>
-<div>
-<label htmlFor="">Address</label>
- <input
-            type="text"
-            {...register("name", { required: true })}
-            className="w-full px-4 py-2 border none "
-          />
-
-</div>
-<div>
-<label htmlFor="">Email</label>
- <input
-            type="email"
-            {...register("email", { required: true })}
-            className="w-full px-4 py-2 border none "
-          />
-
-</div>
-<div>
-<label htmlFor="">Phone  Number</label>
- <input
-            type="number"
-            {...register("pnumber", { required: true })}
-            className="w-full px-4 py-2 border none "
-          />
-
-</div>
-<button className='w-1/4 border-none  bg-orange-400 p-2 border-2 rounded-2 cursor-pointer '>Edit</button>
-</div>
-</div>
+        <div className="mt-6 text-center">
+          {!isEdit ? (
+            <button
+              type="button"
+              onClick={() => setIsEdit(true)}
+              className="px-6 py-2 bg-orange-400 text-white rounded hover:bg-orange-500 transition"
+            >
+              Edit
+            </button>
+          ) : (
+            <button
+              type="submit"
+              className="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+            >
+              Update
+            </button>
+          )}
+        </div>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default profile
+export default Profile;
