@@ -4,6 +4,17 @@ import  images  from "../../constants/images"
 
 const profile = () => {
 
+const userData={
+    fname: "Natashia",
+    lname: "Khalereiio",
+    dob: "1990-01-01",
+    address: "123 Main St, City, Country",
+    email: "dlb@uom.lk",
+    pnumber: "0771234567",
+    
+}
+
+
     const{
         register,
         handleSubmit,
@@ -20,6 +31,7 @@ const profile = () => {
 
 <img src={images.profile} alt="" />
  </div>
+ 
  <div>
 <h5 className='text-green-400'>Natashia  Khalereiio</h5>
 <p>Admin</p>
@@ -28,9 +40,8 @@ const profile = () => {
 
 </div>
 
-
-<div className='bg-white flex border-2 rounded-2 p-5'></div>
-<h1>Personal Information</h1>
+<h1>Personal Information</h1> 
+<div className='bg-white flex border-2  p-6 border-none'>
 
 <hr />
 <div className='grid  md:grid-cols-2  lg:grid-cols-3 gap-3'>
@@ -62,9 +73,9 @@ const profile = () => {
 
 </div>
 <div>
-<label htmlFor="">Date  Of Birth</label>
+<label htmlFor="">Address</label>
  <input
-            type="date"
+            type="text"
             {...register("name", { required: true })}
             className="w-full px-4 py-2 border none "
           />
@@ -88,7 +99,8 @@ const profile = () => {
           />
 
 </div>
-<button className='bg-orange-400 p-4 border-2 rounded-2'>Edit</button>
+<button className='w-1/4 border-none  bg-orange-400 p-2 border-2 rounded-2 cursor-pointer '>Edit</button>
+</div>
 </div>
     </div>
   )
