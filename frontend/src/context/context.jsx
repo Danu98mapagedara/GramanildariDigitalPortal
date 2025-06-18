@@ -1,8 +1,20 @@
 import React from 'react'
 import React, { createContext, useContext,useEffect } from "react";
-const context = () => {
+import  userData from "../constants/user";
+
+
+const UserContext = createContext();
+
+
+const context = ({children}) => {
   return (
-    <div>context</div>
+
+    <UserContext.Provider value={userData}>
+        {children}
+        
+        </ UserContext.Provider>
+
+   
   )
 }
 
