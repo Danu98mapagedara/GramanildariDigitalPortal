@@ -41,6 +41,7 @@ const Profile = () => {
 
       <h1 className='mt-6 text-lg font-bold'>Personal Information</h1>
       <form
+       key={isEdit} 
         onSubmit={handleSubmit(onSubmit)}
         className='bg-white border-2 p-6 mt-2 rounded-lg'
       >
