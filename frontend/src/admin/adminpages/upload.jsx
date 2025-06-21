@@ -7,6 +7,28 @@ const upload = () => {
     const [file, setFile] = useState(null);
   const [message, setMessage] = useState('');
 
+
+
+  const fetchforms = async () => {
+  try {
+    const response = await fetch("http://localhost:8081/api/news");
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return await response.json(); 
+  } catch (error) {
+    console.error("Error fetching news:", error);
+    throw error; 
+  }
+};
+
+
+const{data, isLoading, error} = useQuery({
+  queryKey: ['news'],
+  queryFn: fetchforms,
+});
+
+
 const uploadFile = async (file) => {
     const formData = new FormData();
     formData.append('file', file);
